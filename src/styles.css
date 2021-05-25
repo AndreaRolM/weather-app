@@ -1,0 +1,59 @@
+body {
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+  max-width: 600px;
+}
+
+.card {
+  border: 1px solid rgb(214, 104, 129);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-button,
+.city-bar {
+  border: 1px solid rgb(214, 104, 129);
+  border-radius: 25px;
+  padding: 5px 15px;
+  color: rgb(214, 104, 129);
+  background-color: transparent;
+}
+
+.city-bar {
+  width: 55%;
+}
+
+.temp-units {
+  border: 1px solid rgba(214, 104, 129, 0.5);
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: rgba(214, 104, 129);
+  background-color: transparent;
+  font-size: 10px;
+  transition: all 200ms ease-in-out;
+}
+
+.temp-units:hover {
+  background-color: rgba(214, 104, 129, 0.2);
+}
+
+.search-button {
+  transition: all 200ms ease-in-out;
+  width: 25%;
+}
+
+.search-button:hover {
+  color: white;
+  background-color: rgb(214, 104, 129);
+}
+
+.main-emoji {
+  font-size: 80px;
+}
+
+.next-hours {
+  font-size: 11px;
+}
+
+.next-days {
+  text-align: center;
+}
