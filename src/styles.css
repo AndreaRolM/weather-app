@@ -1,5 +1,6 @@
 body {
-  margin: 20px;
+  display: block;
+  margin: 20px auto;
   font-family: "Roboto", sans-serif;
   max-width: 600px;
 }
@@ -56,4 +57,13 @@ body {
 
 .next-days {
   text-align: center;
+}
+
+.footer,
+.footer-link {
+  font-size: 11px;
+}
+
+.footer-link {
+  text-decoration: none;
 }
