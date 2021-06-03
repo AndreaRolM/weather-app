@@ -31,11 +31,17 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 // and the current temp of the city
 
 function showTemperature(response) {
+  console.log(response.data);
   let temperature = Math.ceil(response.data.main.temp);
   let tempHeading = document.querySelector("#city-temp");
   tempHeading.innerHTML = `${temperature} ˚C`;
   let location = document.querySelector("#city-name");
   location.innerHTML = response.data.name;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showCity(event) {
