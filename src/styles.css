@@ -75,3 +75,7 @@ h6 {
 .footer-link {
   text-decoration: none;
 }
+
+#description::first-letter {
+  text-transform: capitalize;
+}

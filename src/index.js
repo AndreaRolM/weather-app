@@ -31,7 +31,6 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 // and the current temp of the city
 
 function showTemperature(response) {
-  console.log(response.data);
   let temperature = Math.ceil(response.data.main.temp);
   let tempHeading = document.querySelector("#city-temp");
   tempHeading.innerHTML = `${temperature} ˚C`;
@@ -42,8 +41,9 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   let descriptionElement = document.querySelector("#description");
-  descriptionElement = response.data.weather[0].description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function showCity(event) {
