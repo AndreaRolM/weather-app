@@ -32,8 +32,12 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
 function showTemperature(response) {
   let tempHeading = document.querySelector("#city-temp");
-  let celsiusTempt = Math.ceil(response.data.main.temp);
-  tempHeading.innerHTML = celsiusTempt;
+
+  celsiusTempt = response.data.main.temp;
+
+  let temperature = Math.ceil(celsiusTempt);
+  tempHeading.innerHTML = temperature;
+
   let location = document.querySelector("#city-name");
   location.innerHTML = response.data.name;
   let iconElement = document.querySelector("#icon");
@@ -61,8 +65,6 @@ function showCity(event) {
   search(searchInput.value);
 }
 
-search("New York");
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", showCity);
 
@@ -70,12 +72,28 @@ searchForm.addEventListener("submit", showCity);
 
 function displayFahrenheit(event) {
   event.preventDefault();
-  let currentTempF = Math.ceil(celsiusTempt * 1.8 + 32);
-  tempHeading.innerHTML = currentTempF;
+  let fahrenheitTemp = Math.ceil(celsiusTempt * 1.8 + 32);
+  let tempHeading = document.querySelector("#city-temp");
+  tempHeading.innerHTML = fahrenheitTemp;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
-let fahrenheitButton = document.querySelector("#fahrenheit-link");
-fahrenheitButton.addEventListener("click", displayFahrenheit);
+function displayCelsius(event) {
+  event.preventDefault();
+  let tempHeading = document.querySelector("#city-temp");
+  tempHeading.innerHTML = Math.ceil(celsiusTempt);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTempt = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
 
 // Bonus Feature: Current Location button
 
@@ -94,3 +112,5 @@ function getCurrentPosition(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+search("New York");

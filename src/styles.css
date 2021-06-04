@@ -14,7 +14,7 @@ h6 {
 }
 
 .active {
-  font-weight: bold;
+  font-weight: 900;
   cursor: default;
 }
 
@@ -47,7 +47,7 @@ h6 {
 }
 
 .temp-units:hover {
-  background-color: rgba(214, 104, 129, 0.2);
+  color: rgba(214, 104, 129);
 }
 
 .search-button {
