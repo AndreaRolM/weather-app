@@ -31,13 +31,10 @@
               placeholder="Enter city"
               aria-label="Search"
               id="search-text-input"
+              autocomplete="off"
             />
             <button class="search-button" type="submit">Search</button>
-            <button
-              class="temp-units"
-              id="current-location-button"
-              type="button"
-            >
+            <button id="current-location-button" type="button">
               Current Location
             </button>
           </form>
@@ -45,25 +42,31 @@
           <!--right now weather-->
           <br />
           <div class="row align-items-center">
+            <div class="row ml-4">
+              <div class="col-1"></div>
+              <div class="col-6">
+                <h1 id="city-name"></h1>
+                <h5 id="date-time">April 24th, 2021</h5>
+              </div>
+            </div>
             <div class="col-4 text-center main-emoji">
               <img
                 src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="sunny"
                 id="icon"
+                class="float-left"
               />
             </div>
-            <div class="col-6">
-              <div class="row">
-                <h1 id="city-name">Now</h1>
-              </div>
-              <div class="row">
-                <h6 id="date-time">April 24th, 2021</h6>
-              </div>
+            <div class="col-8">
               <div class="row">
                 <h5 id="description"></h5>
               </div>
-              <div class="row">
-                <h2 id="city-temp"></h2>
+              <div class="row float-left">
+                <div class="col-2" id="city-temp"></div>
+                <div class="col-6">
+                  <a href="#" class="active temp-units" id="celsius-link">°C</a
+                  ><a href="#" class="temp-units" id="fahrenheit-link">°F</a>
+                </div>
               </div>
             </div>
           </div>

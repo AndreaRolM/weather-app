@@ -13,6 +13,15 @@ h6 {
   font-size: 14px;
 }
 
+.active {
+  font-weight: bold;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 .card {
   border: 1px solid rgb(214, 104, 129);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -32,13 +41,9 @@ h6 {
 }
 
 .temp-units {
-  border: 1px solid rgba(214, 104, 129, 0.5);
-  border-radius: 25px;
-  padding: 5px 10px;
   color: rgba(214, 104, 129);
-  background-color: transparent;
   font-size: 10px;
-  transition: all 200ms ease-in-out;
+  text-decoration: none;
 }
 
 .temp-units:hover {
@@ -78,4 +83,23 @@ h6 {
 
 #description::first-letter {
   text-transform: capitalize;
+}
+
+#city-temp {
+  font-size: 28px;
+}
+
+#current-location-button {
+  border: 1px solid rgba(214, 104, 129, 0.5);
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: rgba(214, 104, 129);
+  background-color: transparent;
+  font-size: 10px;
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+}
+
+#current-location-button:hover {
+  background-color: rgba(214, 104, 129, 0.2);
 }
