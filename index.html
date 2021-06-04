@@ -39,16 +39,19 @@
             </button>
           </form>
 
-          <!--right now weather-->
           <br />
+
+          <!--Current weather-->
           <div class="row align-items-center">
+            <!--City and time-->
             <div class="row ml-4">
               <div class="col-1"></div>
               <div class="col-6">
                 <h1 id="city-name"></h1>
-                <h5 id="date-time">April 24th, 2021</h5>
+                <h5 id="date-time"></h5>
               </div>
             </div>
+            <!--Icon-->
             <div class="col-4 text-center main-emoji">
               <img
                 src="http://openweathermap.org/img/wn/01d@2x.png"
@@ -57,7 +60,8 @@
                 class="float-left"
               />
             </div>
-            <div class="col-8">
+            <!--Description and temperature-->
+            <div class="col-4">
               <div class="row">
                 <h5 id="description"></h5>
               </div>
@@ -71,6 +75,13 @@
                   ></span
                 >
               </div>
+            </div>
+            <!--Wind and Humidity-->
+            <div class="col-4">
+              <ul>
+                <li>Wind · <span id="wind"></span> km/h</li>
+                <li>Humidity · <span id="humidity"></span>%</li>
+              </ul>
             </div>
           </div>
 

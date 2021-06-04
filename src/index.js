@@ -31,6 +31,7 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 // and the current temp of the city
 
 function showTemperature(response) {
+  console.log(response);
   let tempHeading = document.querySelector("#city-temp");
 
   celsiusTempt = response.data.main.temp;
@@ -48,6 +49,10 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = response.data.wind.speed;
 }
 
 function search(city) {
