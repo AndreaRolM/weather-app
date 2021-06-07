@@ -93,6 +93,19 @@ li {
   text-decoration: none;
 }
 
+.weather-forecast {
+  font-size: 14px;
+}
+
+.weather-forecast-temperatures {
+  color: rgb(214, 104, 129);
+  font-weight: bold;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
+
 #description::first-letter {
   text-transform: capitalize;
 }
