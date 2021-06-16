@@ -31,7 +31,6 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 // and the current temp of the city
 
 function showTemperature(response) {
-  console.log(response);
   let tempHeading = document.querySelector("#city-temp");
 
   celsiusTempt = response.data.main.temp;
@@ -100,6 +99,31 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
+// Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row text-center">`;
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+          <div class="weather-forecast-date">${day}</div>
+          <img src="" alt="" width="" />
+          <div class="weather-forecast-temperatures">
+                      <span class="weather-forecast-temperature-max">18°</span>
+                      <span class="weather-forecast-temperature-min">10°</span>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Bonus Feature: Current Location button
 
 function showPositionTemp(position) {
@@ -119,3 +143,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
+displayForecast();
