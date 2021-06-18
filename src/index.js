@@ -30,6 +30,13 @@ formattedDate.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 // display the city name on the page after the user submits the form
 // and the current temp of the city
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "0acaa1de783699a7c805c0e5bad91ab8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(displayForecast);
+}
+
 function showTemperature(response) {
   let tempHeading = document.querySelector("#city-temp");
 
@@ -52,6 +59,8 @@ function showTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = response.data.wind.speed;
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -101,7 +110,7 @@ celsiusLink.addEventListener("click", displayCelsius);
 
 // Forecast
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row text-center">`;
@@ -143,4 +152,3 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 search("New York");
-displayForecast();
