@@ -1,8 +1,9 @@
 body {
   display: block;
-  margin: 20px auto;
+  margin: 70px auto;
   font-family: "Roboto", sans-serif;
-  max-width: 600px;
+  width: 600px;
+  background: rgb(214, 104, 129);
 }
 
 h1 {
@@ -36,7 +37,9 @@ li {
 
 .card {
   border: 1px solid rgb(214, 104, 129);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .search-button,
@@ -87,10 +90,15 @@ li {
 .footer,
 .footer-link {
   font-size: 11px;
+  color: #ffffff;
 }
 
 .footer-link {
-  text-decoration: none;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  color: #ffffff;
 }
 
 .weather-forecast {
