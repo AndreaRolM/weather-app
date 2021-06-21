@@ -131,7 +131,7 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-3">
             <div class="weather-forecast-date">${forecastDate(forecastDay.dt)}</div>
-            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="" />
+            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="${forecastDay.weather[0].description}" width="50px" />
             <div class="weather-forecast-temperatures">
                         <span class="weather-forecast-temperature-max">${Math.ceil(forecastDay.temp.max)}°</span>
                         <span class="weather-forecast-temperature-min">${Math.ceil(forecastDay.temp.min)}°</span>
